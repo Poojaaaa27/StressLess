@@ -40,7 +40,7 @@ const prompt = ai.definePrompt({
   output: {schema: StressRemediesOutputSchema},
   prompt: `You are a stress management expert providing personalized remedies and tips to students who are highly stressed.
 
-  Based on the stress factors described below, provide a list of remedies and tips that the student can implement to reduce their stress levels.
+  Based on the stress factors described below, provide a list of remedies and tips that the student can implement to reduce their stress levels. The output should be a well-formatted list.
 
   Stress Factors: {{{stressFactors}}}
   `,

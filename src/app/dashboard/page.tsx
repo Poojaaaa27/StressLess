@@ -82,7 +82,7 @@ export default function DashboardPage() {
       
       toast({
         title: "Assessment Complete",
-        description: "Your results have been saved.",
+        description: "Your results have been generated below.",
       });
 
     } catch (error) {

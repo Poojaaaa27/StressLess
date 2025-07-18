@@ -40,7 +40,7 @@ const prompt = ai.definePrompt({
 
   Chat History:
   {{#each chatHistory}}
-    {{#if (eq role \"user\")}}
+    {{#if (eq role "user")}}
       User: {{{content}}}
     {{else}}
       Assistant: {{{content}}}
@@ -49,7 +49,7 @@ const prompt = ai.definePrompt({
 
   User Message: {{{message}}}
 
-  Response:`, // Removed < and > to prevent HTML escaping
+  Response:`,
 });
 
 const healthGuidanceChatbotFlow = ai.defineFlow(
