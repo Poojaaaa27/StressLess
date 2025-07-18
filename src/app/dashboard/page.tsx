@@ -14,6 +14,7 @@ import StressAssessmentForm, { formSchema } from "@/components/dashboard/StressA
 import ResultDisplay from "@/components/dashboard/ResultDisplay";
 import HealthChatbot from "@/components/dashboard/HealthChatbot";
 import { Loader2 } from "lucide-react";
+import { User } from "@/lib/types";
 
 export type Results = {
   stressLevel: 'Highly Stressed' | 'Stressed' | 'Normal';
@@ -56,7 +57,34 @@ export default function DashboardPage() {
         }
       }
       
-      setResults({ stressLevel, reasons, remedies });
+      const newResults = { stressLevel, reasons, remedies };
+      setResults(newResults);
+
+      // Save user to localStorage
+      const storedUsersRaw = localStorage.getItem("stressUsers");
+      const storedUsers: User[] = storedUsersRaw ? JSON.parse(storedUsersRaw) : [];
+      
+      const newUser: User = {
+        id: `usr_${Date.now()}`,
+        name: values.name,
+        age: values.age,
+        email: `${values.name.split(' ')[0].toLowerCase()}@example.com`,
+        prediction: {
+          stressLevel: newResults.stressLevel,
+          reasons: newResults.reasons,
+          remedies: newResults.remedies,
+          assessedDate: new Date().toISOString(),
+        }
+      };
+
+      const updatedUsers = [...storedUsers, newUser];
+      localStorage.setItem("stressUsers", JSON.stringify(updatedUsers));
+      
+      toast({
+        title: "Assessment Complete",
+        description: "Your results have been saved.",
+      });
+
     } catch (error) {
       console.error("Error processing stress assessment:", error);
       toast({

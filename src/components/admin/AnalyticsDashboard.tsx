@@ -10,9 +10,10 @@ import { modelAccuracyData } from "@/lib/placeholder-data";
 
 interface AnalyticsDashboardProps {
   users: User[];
+  onUserDeleted: (userId: string) => void;
 }
 
-export default function AnalyticsDashboard({ users }: AnalyticsDashboardProps) {
+export default function AnalyticsDashboard({ users, onUserDeleted }: AnalyticsDashboardProps) {
   const totalUsers = users.length;
   const highlyStressedCount = users.filter(
     (u) => u.prediction?.stressLevel === "Highly Stressed"
@@ -95,7 +96,7 @@ export default function AnalyticsDashboard({ users }: AnalyticsDashboardProps) {
             <CardTitle>User Management</CardTitle>
           </CardHeader>
           <CardContent>
-            <UserTable users={users} />
+            <UserTable users={users} onUserDeleted={onUserDeleted} />
           </CardContent>
         </Card>
     </div>
