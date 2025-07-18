@@ -27,6 +27,8 @@ export function UserTable({ users }: UserTableProps) {
       <TableHeader>
         <TableRow>
           <TableHead>User ID</TableHead>
+          <TableHead>Name</TableHead>
+          <TableHead>Age</TableHead>
           <TableHead>Email</TableHead>
           <TableHead>Predicted Stress Level</TableHead>
           <TableHead>Last Assessed</TableHead>
@@ -36,6 +38,8 @@ export function UserTable({ users }: UserTableProps) {
         {users.map((user) => (
           <TableRow key={user.id}>
             <TableCell className="font-medium">{user.id}</TableCell>
+            <TableCell>{user.name}</TableCell>
+            <TableCell>{user.age}</TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>
               {user.prediction?.stressLevel ? (

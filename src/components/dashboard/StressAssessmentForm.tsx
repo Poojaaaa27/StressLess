@@ -12,12 +12,15 @@ import {
   FormMessage,
   FormDescription,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 
 export const formSchema = z.object({
+  name: z.string().min(1, "Please enter your name."),
+  age: z.coerce.number().min(10, "Please enter a valid age.").max(100),
   academicStress: z.string().min(1, "Please describe your academic stress.").max(500),
   familyPressure: z.string().min(1, "Please describe your family pressure.").max(500),
   healthStatus: z.string().min(1, "Please describe your health status.").max(500),
@@ -44,6 +47,34 @@ export default function StressAssessmentForm({ form, onSubmit, isLoading }: Stre
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g., Jane Doe" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="age"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Age</FormLabel>
+                    <FormControl>
+                      <Input type="number" placeholder="e.g., 21" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <FormField
                     control={form.control}

@@ -29,6 +29,8 @@ export default function DashboardPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: "",
+      age: 20,
       academicStress: "",
       familyPressure: "",
       healthStatus: "",

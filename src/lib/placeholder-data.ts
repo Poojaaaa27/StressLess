@@ -3,6 +3,8 @@ import { User } from "./types";
 export const users: User[] = [
   {
     id: "usr_001",
+    name: "Alice Johnson",
+    age: 21,
     email: "alice@example.com",
     prediction: {
       stressLevel: "Highly Stressed",
@@ -13,6 +15,8 @@ export const users: User[] = [
   },
   {
     id: "usr_002",
+    name: "Bob Williams",
+    age: 20,
     email: "bob@example.com",
     prediction: {
       stressLevel: "Stressed",
@@ -21,6 +25,8 @@ export const users: User[] = [
   },
   {
     id: "usr_003",
+    name: "Charlie Brown",
+    age: 22,
     email: "charlie@example.com",
     prediction: {
       stressLevel: "Normal",
@@ -29,6 +35,8 @@ export const users: User[] = [
   },
   {
     id: "usr_004",
+    name: "Diana Miller",
+    age: 21,
     email: "diana@example.com",
     prediction: {
       stressLevel: "Highly Stressed",
@@ -39,6 +47,8 @@ export const users: User[] = [
   },
   {
     id: "usr_005",
+    name: "Ethan Davis",
+    age: 23,
     email: "ethan@example.com",
     prediction: {
       stressLevel: "Normal",
@@ -47,6 +57,8 @@ export const users: User[] = [
   },
    {
     id: "usr_006",
+    name: "Fiona Garcia",
+    age: 20,
     email: "fiona@example.com",
     prediction: {
       stressLevel: "Stressed",
