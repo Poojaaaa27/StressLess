@@ -1,7 +1,7 @@
 "use client";
 
 import { User } from "@/lib/types";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { ClassificationChart } from "./ClassificationChart";
 import { UserTable } from "./UserTable";
 import { ShieldAlert, Smile, HeartPulse } from "lucide-react";
