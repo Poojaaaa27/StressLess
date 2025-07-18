@@ -10,13 +10,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { LayoutDashboard } from "lucide-react";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Logo />
+        <nav className="ml-6 flex items-center space-x-4 lg:space-x-6">
+          <Link
+            href="/dashboard"
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Dashboard
+          </Link>
+        </nav>
         <div className="ml-auto flex items-center gap-4">
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="/admin">
+              <LayoutDashboard className="h-5 w-5" />
+              <span className="sr-only">Admin Dashboard</span>
+            </Link>
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-9 w-9 rounded-full">

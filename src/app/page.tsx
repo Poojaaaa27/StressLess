@@ -23,6 +23,10 @@ export default function LoginPage() {
     router.push("/dashboard");
   };
 
+  const handleAdminLogin = () => {
+    router.push("/admin");
+  };
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <Card className="mx-auto w-full max-w-sm">
@@ -53,6 +57,9 @@ export default function LoginPage() {
             </div>
             <Button type="submit" className="w-full">
               Login
+            </Button>
+            <Button variant="outline" type="button" className="w-full" onClick={handleAdminLogin}>
+              Admin Login
             </Button>
           </form>
           <div className="mt-4 text-center text-sm">
