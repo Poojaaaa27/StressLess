@@ -54,3 +54,10 @@ export const users: User[] = [
     },
   },
 ];
+
+export const modelAccuracyData = [
+    { name: "Accuracy", value: 92, fill: "hsl(var(--chart-1))" },
+    { name: "Precision", value: 88, fill: "hsl(var(--chart-2))" },
+    { name: "Recall", value: 90, fill: "hsl(var(--chart-3))" },
+    { name: "F1-Score", value: 89, fill: "hsl(var(--chart-4))" },
+];

@@ -5,6 +5,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ClassificationChart } from "./ClassificationChart";
 import { UserTable } from "./UserTable";
 import { ShieldAlert, Smile, HeartPulse } from "lucide-react";
+import { ModelAccuracyChart } from "./ModelAccuracyChart";
+import { modelAccuracyData } from "@/lib/placeholder-data";
 
 interface AnalyticsDashboardProps {
   users: User[];
@@ -80,10 +82,11 @@ export default function AnalyticsDashboard({ users }: AnalyticsDashboardProps) {
         </Card>
         <Card className="lg:col-span-3">
            <CardHeader>
-            <CardTitle>Model Accuracy</CardTitle>
+            <CardTitle>Model Performance</CardTitle>
+            <CardDescription>Based on Kaggle "Student Stress Factors" dataset.</CardDescription>
           </CardHeader>
-          <CardContent className="flex h-[300px] items-center justify-center">
-            <p className="text-muted-foreground">Model accuracy chart will be displayed here.</p>
+          <CardContent>
+            <ModelAccuracyChart data={modelAccuracyData} />
           </CardContent>
         </Card>
       </div>
