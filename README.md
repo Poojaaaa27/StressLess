@@ -2,10 +2,9 @@ Deployment link : https://stress-less-five.vercel.app/
 # Student Stress Level Prediction and Health Guidance Platform
 
 A full-stack web application that predicts the stress levels of students using a BERT-based NLP machine learning model. The platform provides targeted health guidance and chatbot support for highly stressed students.
----
 
 ## Directory Structure
-
+'''
 student-stress-prediction/
 │
 ├── client/ # React frontend
@@ -31,7 +30,7 @@ student-stress-prediction/
 │
 ├── README.md
 └── LICENSE
----
+'''
 
 ## Installation
 
