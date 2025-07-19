@@ -58,12 +58,8 @@ npm install
 -Ensure backend loads model and exposes prediction API endpoint.
 ```
 ## 📊 Visual Outputs
-#Questionnaire Dashboard
 <img src="quest.png" alt="Details" width="500"/>
-#Admin Dashboard
--MODEL ANALYSIS
 <img src="modelanalysis.png" alt="MODEL ANALYSIS" width="500"/>
--USER DETAILS
 <img src="Userdetails.png" alt="STUDENT DETAILS" width="500"/>
 
 
